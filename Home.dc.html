@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;display=swap">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #ffffff; color: #201e1d; font-family: "Archivo", system-ui, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden; }
+  a { color: #201e1d; text-decoration: none; }
+  a:hover { color: #ec3013; }
+  ::selection { background: #ffc4b8; color: #201e1d; }
+  :focus-visible { outline: 2px solid #ec3013; outline-offset: 2px; }
+  @keyframes kx-marquee { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+  @keyframes kx-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+</style>
+</helmet>
+
+<div style="width:100%;background:#ffffff;">
+
+  <nav style="position:fixed;top:14px;left:0;right:0;z-index:60;display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:8px;padding:0 14px;">
+    <a href="Home.dc.html" title="Home" style="flex:none;width:44px;height:44px;border-radius:999px;background:#201e1d;color:#ffffff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;letter-spacing:-0.02em;box-shadow:0 6px 22px rgba(32,30,29,0.14);" style-hover="background:#ec3013;color:#ffffff;">K<span style="color:#ec3013;font-size:11px;line-height:1;">✱</span></a>
+
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;flex:0 1 auto;min-width:0;max-width:100%;gap:2px;padding:5px;border-radius:999px;background:rgba(255,255,255,0.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid #eae7e7;box-shadow:0 8px 28px rgba(32,30,29,0.09);">
+      <a href="#work" style="display:flex;align-items:center;gap:7px;padding:9px clamp(10px,2.4vw,15px);border-radius:999px;font-size:clamp(12.5px,2.4vw,13.5px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;color:#201e1d;" style-hover="background:#f8f4f4;color:#ec3013;"><span style="width:7px;height:7px;background:#ec3013;display:block;"></span>Work</a>
+      <a href="Playground.dc.html" style="display:flex;align-items:center;gap:7px;padding:9px clamp(10px,2.4vw,15px);border-radius:999px;font-size:clamp(12.5px,2.4vw,13.5px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;color:#201e1d;" style-hover="background:#f8f4f4;color:#ec3013;"><span style="width:7px;height:7px;background:#201e1d;display:block;border-radius:999px;"></span>Playground</a>
+      <a href="About.dc.html" style="display:flex;align-items:center;gap:7px;padding:9px clamp(10px,2.4vw,15px);border-radius:999px;font-size:clamp(12.5px,2.4vw,13.5px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;color:#201e1d;" style-hover="background:#f8f4f4;color:#ec3013;"><span style="width:7px;height:7px;background:#201e1d;display:block;transform:rotate(45deg);"></span>About</a>
+      <a href="https://drive.google.com/file/d/1FqYwQ7Uxk2oAFDx1tuc0pWSFGb4GINZ8/view?usp=drive_link" style="display:flex;align-items:center;gap:7px;padding:9px clamp(10px,2.4vw,15px);border-radius:999px;font-size:clamp(12.5px,2.4vw,13.5px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;color:#201e1d;" style-hover="background:#f8f4f4;color:#ec3013;"><span style="width:7px;height:9px;border:1.5px solid #201e1d;display:block;"></span>CV</a>
+    </div>
+
+    <a href="#footer" title="Contact me" style="flex:none;width:44px;height:44px;border-radius:999px;background:#ec3013;color:#ffffff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(236,48,19,0.28);" style-hover="background:#dd2b0f;color:#ffffff;">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="2" y="4" width="20" height="16"></rect><path d="M2 6l10 7 10-7"></path></svg>
+    </a>
+  </nav>
+
+  
+
+  <section id="top" style="position:relative;overflow:hidden;padding:clamp(132px,190px - 10vw,152px) 0 0;">
+    <sc-if value="{{ showGlow }}" hint-placeholder-val="{{ true }}">
+      <div aria-hidden="true" style="position:absolute;left:50%;top:-160px;transform:translateX(-50%);width:min(1500px,160%);height:560px;background:radial-gradient(60% 62% at 50% 0%, #ff563c 0%, rgba(236,48,19,0.62) 30%, rgba(255,151,131,0.28) 52%, rgba(255,255,255,0) 76%);filter:blur(56px);opacity:0.9;pointer-events:none;"></div>
+    </sc-if>
+
+    <div style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px);">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#605d5d;padding-bottom:clamp(18px,3vw,34px);">
+        <span>UI / UX Designer</span>
+        <span>Portfolio</span>
+      </div>
+
+      <h1 style="margin:0;font-weight:700;font-size:clamp(44px,9.4vw,152px);line-height:0.88;letter-spacing:-0.045em;text-wrap:pretty;">
+        
+        
+        <span style="display: flex; align-items: center; gap: clamp(14px,2.2vw,32px); flex-wrap: wrap; width: 100%; justify-content: flex-start; position: static">
+          <span>Creating</span><span onPointerDown="{{ stripDown }}" style="flex:none;width:107px;height:110px;border:1px solid #d7d3d3;border-radius:12px;display:block;overflow:hidden;cursor:grab;touch-action:none;" style-active="cursor:grabbing;">
+            <span ref="{{ stripRef }}" style="display:flex;flex-direction:column;width:100%;will-change:transform;">
+              <img src="assets/strip-a.jpeg" alt="" style="width:100%;display:block;">
+              <img src="assets/strip-b.jpeg" alt="" style="width:100%;display:block;">
+              <img src="assets/strip-a.jpeg" alt="" aria-hidden="true" style="width:100%;display:block;">
+              <img src="assets/strip-b.jpeg" alt="" aria-hidden="true" style="width:100%;display:block;">
+            </span>
+          </span>
+          
+        </span><span style="display: block; text-align: left">Designs that speak</span><span style="display: block; text-align: left">before you do.<span style="color:#ec3013;font-size:0.4em;vertical-align:super;line-height:0;">✱</span></span>
+      </h1>
+
+      <div style="padding:clamp(84px,13vw,196px) 0 0;"></div>
+    </div>
+    <sc-if value="{{ showGlow }}" hint-placeholder-val="{{ true }}">
+      <div aria-hidden="true" style="position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(1500px,160%);height:240px;background:radial-gradient(58% 100% at 50% 100%, rgba(255,86,60,0.85) 0%, rgba(236,48,19,0.4) 32%, rgba(255,151,131,0.18) 56%, rgba(255,255,255,0) 80%);filter:blur(48px);pointer-events:none;"></div>
+    </sc-if>
+  </section><section id="work" style="border-top:2px solid #201e1d;padding-top:clamp(22px,3vw,38px);">
+    <div style="overflow:hidden;padding-bottom:clamp(14px,2vw,26px);">
+      <div data-marquee="true" style="display:flex;width:max-content;animation:kx-marquee 44s linear infinite;">
+        <span style="display:flex;align-items:center;font-weight:700;font-size:clamp(54px,10.5vw,148px);line-height:1;letter-spacing:-0.045em;white-space:nowrap;padding-right:0.28em;">my projects<span style="color:#ec3013;padding:0 0.18em;">✱</span>my projects<span style="color:#ec3013;padding:0 0.18em;">✱</span>my projects<span style="color:#ec3013;padding:0 0.18em;">✱</span></span>
+        <span aria-hidden="true" style="display:flex;align-items:center;font-weight:700;font-size:clamp(54px,10.5vw,148px);line-height:1;letter-spacing:-0.045em;white-space:nowrap;padding-right:0.28em;">my projects<span style="color:#ec3013;padding:0 0.18em;">✱</span>my projects<span style="color:#ec3013;padding:0 0.18em;">✱</span>my projects<span style="color:#ec3013;padding:0 0.18em;">✱</span></span>
+      </div>
+    </div>
+
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px);">
+
+      <a href="#" data-reveal="true" style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(20px,4vw,60px);align-items:center;padding:clamp(30px,4vw,58px) 0;border-top:2px solid #201e1d;color:#201e1d;" style-hover="color:#201e1d;">
+        <div onMouseMove="{{ rowMove }}" onMouseLeave="{{ rowLeave }}" style="position:relative;width:100%;aspect-ratio:4/3;background:#f8f4f4;border:1px solid #d7d3d3;display:flex;align-items:flex-end;padding:14px;overflow:hidden;cursor:none;">
+          <img src="assets/air-atlas.png" alt="Air Atlas — drone based disaster management" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <span data-cursor="true" aria-hidden="true" style="position:absolute;left:0;top:0;opacity:0;transition:opacity 0.22s ease;pointer-events:none;width:52px;height:52px;border-radius:999px;background:#ec3013;color:#ffffff;display:flex;align-items:center;justify-content:center;font-size:19px;box-shadow:0 8px 24px rgba(236,48,19,0.28);">↗</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,20px);">
+          <span style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#ec3013;">01</span>
+          <h2 style="margin:0;font-weight:700;font-size:clamp(32px,4.6vw,68px);line-height:0.94;letter-spacing:-0.035em;">Air Atlas</h2>
+          <p style="margin:0;font-size:clamp(13px,1.05vw,15px);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#201e1d;">Drone Based Disaster Management</p>
+          <p style="margin:0;font-size:clamp(15px,1.25vw,18px);line-height:1.5;color:#605d5d;max-width:44ch;text-wrap:pretty;">A high-stakes dashboard for drone operators to facilitate early detection and evacuation</p>
+          <span style="align-self:flex-start;display:flex;align-items:center;gap:10px;margin-top:4px;padding:14px 22px;border:2px solid #201e1d;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#201e1d;transition:background 0.2s ease,color 0.2s ease;" style-hover="background:#201e1d;color:#ffffff;">View case study ↗</span>
+        </div>
+      </a>
+
+      <a href="#" data-reveal="true" style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(20px,4vw,60px);align-items:center;padding:clamp(30px,4vw,58px) 0;border-top:2px solid #201e1d;color:#201e1d;" style-hover="color:#201e1d;">
+        <div onMouseMove="{{ rowMove }}" onMouseLeave="{{ rowLeave }}" style="position:relative;width:100%;aspect-ratio:4/3;background:#f8f4f4;border:1px solid #d7d3d3;display:flex;align-items:flex-end;padding:14px;overflow:hidden;cursor:none;">
+          <img src="assets/revogue.png" alt="ReVogue — sustainable fashion platform" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <span data-cursor="true" aria-hidden="true" style="position:absolute;left:0;top:0;opacity:0;transition:opacity 0.22s ease;pointer-events:none;width:52px;height:52px;border-radius:999px;background:#ec3013;color:#ffffff;display:flex;align-items:center;justify-content:center;font-size:19px;box-shadow:0 8px 24px rgba(236,48,19,0.28);">↗</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,20px);">
+          <span style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#ec3013;">02</span>
+          <h2 style="margin:0;font-weight:700;font-size:clamp(32px,4.6vw,68px);line-height:0.94;letter-spacing:-0.035em;">ReVogue</h2>
+          <p style="margin:0;font-size:clamp(13px,1.05vw,15px);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#201e1d;">Sustainable Fashion Platform</p>
+          <p style="margin:0;font-size:clamp(15px,1.25vw,18px);line-height:1.5;color:#605d5d;max-width:44ch;text-wrap:pretty;">A circular economy marketplace for renting, selling and swapping fashion items</p>
+          <span style="align-self:flex-start;display:flex;align-items:center;gap:10px;margin-top:4px;padding:14px 22px;border:2px solid #201e1d;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#201e1d;transition:background 0.2s ease,color 0.2s ease;" style-hover="background:#201e1d;color:#ffffff;">View case study ↗</span>
+        </div>
+      </a>
+
+      <a href="#" data-reveal="true" style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(20px,4vw,60px);align-items:center;padding:clamp(30px,4vw,58px) 0;border-top:2px solid #201e1d;border-bottom:2px solid #201e1d;color:#201e1d;" style-hover="color:#201e1d;">
+        <div onMouseMove="{{ rowMove }}" onMouseLeave="{{ rowLeave }}" style="position:relative;width:100%;aspect-ratio:4/3;background:#f8f4f4;border:1px solid #d7d3d3;display:flex;align-items:flex-end;padding:14px;overflow:hidden;cursor:none;">
+          <img src="assets/voyage.jpg" alt="Voyage — kids-safe video content platform" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <span data-cursor="true" aria-hidden="true" style="position:absolute;left:0;top:0;opacity:0;transition:opacity 0.22s ease;pointer-events:none;width:52px;height:52px;border-radius:999px;background:#ec3013;color:#ffffff;display:flex;align-items:center;justify-content:center;font-size:19px;box-shadow:0 8px 24px rgba(236,48,19,0.28);">↗</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,20px);">
+          <span style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#ec3013;">03</span>
+          <h2 style="margin:0;font-weight:700;font-size:clamp(32px,4.6vw,68px);line-height:0.94;letter-spacing:-0.035em;">Voyage</h2>
+          <p style="margin:0;font-size:clamp(13px,1.05vw,15px);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#201e1d;">Kids-safe Video Content Platform</p>
+          <p style="margin:0;font-size:clamp(15px,1.25vw,18px);line-height:1.5;color:#605d5d;max-width:44ch;text-wrap:pretty;">Dual-interface platform with a parental dashboard and kids to watch safe content</p>
+          <span style="align-self:flex-start;display:flex;align-items:center;gap:10px;margin-top:4px;padding:14px 22px;border:2px solid #201e1d;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#201e1d;transition:background 0.2s ease,color 0.2s ease;" style-hover="background:#201e1d;color:#ffffff;">View case study ↗</span>
+        </div>
+      </a>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding:clamp(26px,3.4vw,44px) 0 0;">
+        <span style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#605d5d;">CASE STUDY - MORE TO COME</span>
+        <a href="Playground.dc.html" style="display:flex;align-items:center;gap:10px;padding:14px 22px;border:2px solid #201e1d;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#201e1d;" style-hover="background:#201e1d;color:#ffffff;">See the playground ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" style="background:#201e1d;color:#f8f4f4;margin-top:clamp(56px,8vw,110px);padding:clamp(38px,5vw,70px) 0 26px;overflow:hidden;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px);">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:28px;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;gap:5px;">
+          <span style="font-size:clamp(15px,1.4vw,19px);font-weight:600;letter-spacing:-0.01em;">Let’s connect.</span>
+          <span style="font-size:clamp(14px,1.3vw,17px);color:#9b9797;">I’m always down for a chat.</span>
+          <span style="margin-top:12px;font-size:10.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#9b9797;border:1px dashed #605d5d;padding:8px 10px;">kshitiztirkey25@gmail.com</span>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <a href="https://www.linkedin.com/in/kshitiz-kumar-tirkey-783848315" style="width:46px;height:46px;border:1px solid #444141;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;letter-spacing:0.08em;color:#f8f4f4;" style-hover="background:#ec3013;color:#ffffff;">in</a>
+          <a href="https://www.instagram.com/kshitizky/?hl=en" style="width:46px;height:46px;border:1px solid #444141;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;letter-spacing:0.08em;color:#f8f4f4;" style-hover="background:#ec3013;color:#ffffff;">IG</a>
+          <a href="https://www.behance.net/kshitiztirkey" style="width:46px;height:46px;border:1px solid #444141;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;letter-spacing:0.08em;color:#f8f4f4;" style-hover="background:#ec3013;color:#ffffff;">Bē</a>
+        </div>
+      </div>
+
+      <div style="padding:clamp(28px,4vw,54px) 0 clamp(18px,2.4vw,30px);">
+        <span style="display:block;font-weight:700;font-size:clamp(58px,17vw,250px);line-height:0.82;letter-spacing:-0.055em;white-space:nowrap;">Kshitiz<span style="color:#ec3013;">✱</span></span>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid #444141;padding-top:18px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#9b9797;">
+        <span>© 2026 KSHITIZ KUMAR TIRKEY</span>
+        <a href="#top" style="color:#9b9797;" style-hover="color:#ec3013;">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showGlow&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;marqueeSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:44,&quot;min&quot;:12,&quot;max&quot;:120,&quot;step&quot;:2,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this._raf = requestAnimationFrame(() => {
+      this.applyMarquee();
+      this.armReveals();
+    });
+    this.startStrip();
+  }
+
+  startStrip() {
+    this._off = 0;
+    const tick = t => {
+      const el = this._strip;
+      if (el) {
+        const dt = this._lastT ? Math.min(50, t - this._lastT) : 16;
+        const period = el.offsetHeight / 2 || 1;
+        if (!this._dragStrip) this._off += dt * 0.035;
+        this._off = ((this._off % period) + period) % period;
+        el.style.transform = 'translate3d(0,' + (-this._off) + 'px,0)';
+      }
+      this._lastT = t;
+      this._stripRaf = requestAnimationFrame(tick);
+    };
+    this._stripRaf = requestAnimationFrame(tick);
+  }
+
+  componentDidUpdate() { this.applyMarquee(); }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    cancelAnimationFrame(this._stripRaf);
+    clearTimeout(this._failsafe);
+    if (this._io) this._io.disconnect();
+  }
+
+  applyMarquee() {
+    const speed = Number(this.props.marqueeSpeed) || 44;
+    document.querySelectorAll('[data-marquee]').forEach(el => {
+      el.style.animationDuration = speed + 's';
+    });
+  }
+
+  setupReveals() {
+    if ((this.props.revealOnScroll ?? true) === false) return;
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    els.forEach(el => { el.style.opacity = ''; el.style.transform = ''; el.style.transition = ''; });
+    if (!('IntersectionObserver' in window)) return;
+    if (this._io) this._io.disconnect();
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting && e.boundingClientRect.top > 0) return;
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'none';
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.06, rootMargin: '0px 0px -4% 0px' });
+
+    els.forEach((el, i) => {
+      if (el.getBoundingClientRect().top > window.innerHeight * 0.9) {
+        const d = (i % 3) * 0.07;
+        el.style.transition = 'opacity 0.7s cubic-bezier(0.2,0.7,0.2,1) ' + d + 's, transform 0.7s cubic-bezier(0.2,0.7,0.2,1) ' + d + 's';
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(26px)';
+      }
+      io.observe(el);
+    });
+    this._io = io;
+
+    clearTimeout(this._failsafe);
+    this._failsafe = setTimeout(() => {
+      els.forEach(el => {
+        if (el.style.opacity === '0') { el.style.opacity = '1'; el.style.transform = 'none'; }
+      });
+    }, 3000);
+  }
+
+  armReveals() {
+    this.setupReveals();
+    if (this._armed) return;
+    this._armed = true;
+    const again = () => this.setupReveals();
+    window.addEventListener('load', again, { once: true });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(again);
+  }
+
+  renderVals() {
+    return {
+      showGlow: this.props.showGlow ?? true,
+      stripRef: el => { this._strip = el; },
+      stripDown: e => {
+        if (!this._strip) return;
+        e.preventDefault();
+        const startY = e.clientY, startOff = this._off;
+        this._dragStrip = true;
+        const move = ev => { this._off = startOff - (ev.clientY - startY); };
+        const up = () => {
+          this._dragStrip = false;
+          window.removeEventListener('pointermove', move);
+          window.removeEventListener('pointerup', up);
+          window.removeEventListener('pointercancel', up);
+        };
+        window.addEventListener('pointermove', move);
+        window.addEventListener('pointerup', up);
+        window.addEventListener('pointercancel', up);
+      },
+      rowMove: e => {
+        const row = e.currentTarget;
+        const chip = row.querySelector('[data-cursor]');
+        if (!chip) return;
+        const r = row.getBoundingClientRect();
+        chip.style.transform = 'translate(' + (e.clientX - r.left) + 'px,' + (e.clientY - r.top) + 'px) translate(-50%,-50%)';
+        chip.style.opacity = '1';
+      },
+      rowLeave: e => {
+        const chip = e.currentTarget.querySelector('[data-cursor]');
+        if (chip) chip.style.opacity = '0';
+      }
+    };
+  }
+}
+
+</script>
+</body>
+</html>
